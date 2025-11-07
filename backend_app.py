@@ -63,8 +63,10 @@ def query():
                 "type": doc_type,
                 "file": meta.get("source", "unknown"),
                 "title": title,
-                "preview": preview
+                "preview": preview,
+                "link": meta.get("pdf_url", None)   # ✅ Add this line
             })
+
 
         return jsonify({
             "query": user_query,
